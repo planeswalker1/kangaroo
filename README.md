@@ -1,6 +1,6 @@
 # _kangaroo_
 
-#### _looping programming challenge, 12.22.2018_
+#### _looping programming challenge, 12.23.2018_
 
 #### By _**planeswalker1**_
 

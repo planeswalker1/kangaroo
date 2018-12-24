@@ -25,3 +25,41 @@
 //   check the condition (compare distances after each jump) for 10000 jumps to see if it the kangaroos will reach the same position at the same jump
 //     return 'YES' if the kangaroos will reach the same position
 //   else return 'NO'
+
+function willKangaroosMeet (start1, speed1, start2, speed2) {
+  if (start2 > start1 && speed2 > speed1) {
+    // debugging logs
+    // kangaroo1 will not reach kangaroo2
+    // console.log('kangaroo1 will not reach kangaroo2, thank goodness we didnt let them jump for 10000 jumps');
+    return 'NO';
+  } else  {
+    let distance1 = start1;
+    let distance2 = start2;
+    // debugging logs
+    // initializing the distances
+    // console.log('initializing the distances');
+    // console.log('distance1: ' + distance1);
+    // console.log('distance2: ' + distance2);
+    for (let i = 1; i <= 10000; i++) {
+      distance1 += speed1;
+      distance2 += speed2;
+      // debugging logs
+      // checking distances after every iteration
+      // console.log('distance1 after ' + i +' jumps: ' + distance1);
+      // console.log('distance2 after ' + i +' jumps: ' + distance2);
+      if (distance1 === distance2) {
+        // debugging logs
+        // the kangaroos will meets
+        // console.log('the kangaroos will meet, hooray!');
+        // console.log('at jump ' + i);
+        return 'YES';
+      }
+    }
+    // debugging logs
+    // the kangaroos will not meet even after 100 jumps :(
+    // console.log('kangaroos will not meet even after 10000 jumps :(');
+    return 'NO';
+  }
+}
+
+willKangaroosMeet(4523, 8092, 9419, 8076);
